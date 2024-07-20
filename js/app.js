@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const tableBody = document.querySelector('tbody');
   const gameValueField = document.getElementById('game-value');
   const versionNumberElement = document.getElementById('version-number');
+  const scrollPositionInput = document.getElementById('scroll-position');
+  const setScrollButton = document.getElementById('set-scroll');
 
   // Initial data
   const initialData = Array.from({ length: 8 }, () => ({
@@ -76,4 +78,21 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     versionNumberElement.textContent = `V${currentVersion}`;
   }
+
+  // Scroll to the position specified in the scroll position input field
+  const container = document.querySelector('.container');
+  const scrollPosition = localStorage.getItem('scrollPosition') ? parseInt(localStorage.getItem('scrollPosition')) : 0;
+  container.scrollTop = scrollPosition;
+
+  // Set scroll position on button click
+  setScrollButton.addEventListener('click', () => {
+    const newPosition = parseInt(scrollPositionInput.value);
+    localStorage.setItem('scrollPosition', newPosition);
+    container.scrollTop = newPosition;
+  });
+  
+  // Ensure the initial view is locked from FRANKIE'S POKER FLIPS downwards
+  const headerHeight = document.querySelector('.header').offsetHeight;
+  container.scrollTop = headerHeight;
+  localStorage.setItem('scrollPosition', headerHeight);
 });
