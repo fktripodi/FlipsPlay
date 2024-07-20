@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const tableBody = document.querySelector('tbody');
   const gameValueField = document.getElementById('game-value');
+  const versionNumberElement = document.getElementById('version-number');
 
   // Initial data
   const initialData = Array.from({ length: 8 }, () => ({
@@ -48,7 +49,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add dollar sign automatically in front of new value
   gameValueField.addEventListener('input', (e) => {
     if (!gameValueField.value.startsWith('$')) {
-      gameValueField.value = '$' + gameValueField.value.replace('$', '');
+      gameValueField.value = '$' + gameValueField.value.replace(/^\$?/, '');
     }
   });
+
+  // Handle version increment only when app code changes
+  const currentVersion = localStorage.getItem('version') ? parseInt(localStorage.getItem('version')) : 1;
+  const lastUpdated = localStorage.getItem('lastUpdated') || '';
+
+  // Function to check for app code changes
+  const checkForChanges = () => {
+    // Example: Check if the app.js file content has changed
+    const appCode = document.querySelector('script[src="js/app.js"]').textContent;
+    if (appCode !== lastUpdated) {
+      localStorage.setItem('lastUpdated', appCode);
+      localStorage.setItem('version', currentVersion + 1);
+      return true;
+    }
+    return false;
+  };
+
+  if (checkForChanges()) {
+    versionNumberElement.textContent = `V${currentVersion + 1}`;
+  } else {
+    versionNumberElement.textContent = `V${currentVersion}`;
+  }
+
+  // Ensure the initial view is locked from FRANKIE'S POKER FLIPS downwards
+  const container = document.querySelector('.container');
+  const headerHeight = document.querySelector('.header').offsetHeight;
+  container.scrollTop = headerHeight;
 });

@@ -60,6 +60,7 @@ body {
   background-color: var(--dark-blue);
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Ensure space between title and version number */
   padding: var(--padding);
   box-sizing: border-box;
 }
@@ -89,6 +90,15 @@ body {
 .title-box span {
   color: yellow;
   font-size: 1.2em;
+  font-weight: bold;
+}
+
+.version-number {
+  color: var(--white);
+  background-color: var(--dark-blue);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1em;
   font-weight: bold;
 }
 
