@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const tableBody = document.querySelector('tbody');
   const gameValueField = document.getElementById('game-value');
   const versionNumberElement = document.getElementById('version-number');
-  const chipClickSound = new Audio('sounds/caching-chip-value.mp3.mp3');
+  const chipClickSound = new Audio('sounds/caching-chip-value.mp3');
 
   // Read version number from CSS variable
   const versionNumber = getComputedStyle(document.documentElement).getPropertyValue('--version-number').trim();
