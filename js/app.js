@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const tableBody = document.querySelector('tbody');
   const gameValueField = document.getElementById('game-value');
+  const versionNumberElement = document.getElementById('version-number');
 
   // Initial data
   const initialData = Array.from({ length: 8 }, () => ({
@@ -48,7 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add dollar sign automatically in front of new value
   gameValueField.addEventListener('input', (e) => {
     if (!gameValueField.value.startsWith('$')) {
-      gameValueField.value = '$' + gameValueField.value.replace('$', '');
+      gameValueField.value = '$' + gameValueField.value.replace(/^\$?/, '');
     }
   });
+
+  // Handle version increment
+  let version = localStorage.getItem('version') ? parseInt(localStorage.getItem('version')) : 0;
+  version += 1;
+  localStorage.setItem('version', version);
+  versionNumberElement.textContent = `V${version}`;
 });

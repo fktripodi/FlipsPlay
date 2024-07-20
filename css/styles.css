@@ -43,6 +43,7 @@ body {
   height: 100vh;
   background-color: #f0f0f0;
   margin: 0;
+  overflow: hidden; /* Prevents scrolling */
 }
 
 /* Container */
@@ -53,6 +54,9 @@ body {
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding-bottom: var(--padding);
+  overflow-y: auto; /* Enables vertical scrolling within the container */
+  max-height: 100vh; /* Ensures the container does not exceed viewport height */
+  margin-top: 10px;
 }
 
 /* Header */
@@ -84,11 +88,25 @@ body {
 .title-box {
   flex: 1;
   text-align: center;
+  position: relative;
 }
 
 .title-box span {
   color: yellow;
   font-size: 1.2em;
+  font-weight: bold;
+}
+
+.version-number {
+  color: var(--white);
+  background-color: var(--dark-blue);
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1em;
   font-weight: bold;
 }
 
@@ -193,7 +211,7 @@ input {
   margin: var(--button-spacing) var(--button-spacing) 0 var(--button-spacing);
 }
 
-.button-players {
+.custom-button {
   flex: 1;
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
@@ -203,39 +221,14 @@ input {
   cursor: pointer;
   text-align: center;
   margin: 0 var(--button-spacing);
+  border-radius: 5px;
   font-weight: bold;
 }
 
-.button-history {
-  flex: 1;
-  background-color: var(--button-bg-color);
-  color: var(--button-text-color);
-  border: none;
-  padding: 15px;
-  font-size: 1em;
-  cursor: pointer;
-  text-align: center;
-  margin: 0 var(--button-spacing);
-  font-weight: bold;
-}
-
-.button-other {
-  flex: 1;
-  background-color: var(--button-bg-color);
-  color: var(--button-text-color);
-  border: none;
-  padding: 15px;
-  font-size: 1em;
-  cursor: pointer;
-  text-align: center;
-  margin: 0 var(--button-spacing);
-  font-weight: bold;
-}
-
-.button-players:first-child {
+.custom-button:first-child {
   margin-left: 0;
 }
 
-.button-other:last-child {
+.custom-button:last-child {
   margin-right: 0;
 }
