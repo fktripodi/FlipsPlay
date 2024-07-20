@@ -2,7 +2,7 @@
 
 /* Root Variables for Easy Manipulation */
 :root {
-  --chip-margin: 10px; /* Adjust this value to change the spacing between chips */
+  --chip-margin: 5px; /* Adjust this value to change the spacing between chips */
   --dark-blue: #1E3A8A;
   --white: #FFFFFF;
   --font-family: Arial, sans-serif;
@@ -13,8 +13,8 @@
   --button-spacing: 20px;
   --button-bg-color: #FFD700;
   --button-text-color: #FFFFFF;
-  --chip-size: 75px; /* Set the consistent size for all chips */
-  --app-title-size: 2em; /* Adjust this value to change the size of the app title */
+  --chip-size: 70px; /* Set the consistent size for all chips */
+  --app-title-size: 1.6em; /* Adjust this value to change the size of the app title */
 }
 
 /* Utility Classes for Font and Spacing */
