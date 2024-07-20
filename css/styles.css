@@ -4,19 +4,17 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #f0f0f0;
 }
 
 .header {
   width: 100%;
+  background-color: #1E3A8A; /* Dark blue background */
+  color: yellow;
   display: flex;
   align-items: center;
   padding: 10px;
   box-sizing: border-box;
-  background-color: #1E3A8A; /* Dark blue background */
 }
 
 .menu-icon {
@@ -39,7 +37,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: yellow;
   font-size: 1.2em;
   font-weight: bold;
   text-align: center;
@@ -47,21 +44,17 @@ body {
 
 .container {
   width: 100%;
-  max-width: 400px; /* Adjusted for handheld devices */
-  padding: 20px;
+  padding: 10px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
-}
-
-.title {
-  text-align: center;
-  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 th, td {
