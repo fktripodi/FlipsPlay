@@ -1,9 +1,8 @@
-// app.js
-
 document.addEventListener('DOMContentLoaded', () => {
   const tableBody = document.querySelector('tbody');
   const gameValueField = document.getElementById('game-value');
   const versionNumberElement = document.getElementById('version-number');
+  const chipClickSound = new Audio('sounds/cachingChipValue.mp3');
 
   // Read version number from CSS variable
   const versionNumber = getComputedStyle(document.documentElement).getPropertyValue('--version-number').trim();
@@ -42,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chip.addEventListener('click', () => {
       const value = chip.getAttribute('data-value');
       gameValueField.value = value;
+      chipClickSound.play();
     });
   });
 
