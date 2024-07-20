@@ -1,19 +1,19 @@
 // app.js
 
 document.addEventListener('DOMContentLoaded', () => {
-  const tableBody = document.querySelector('#editableTable tbody');
+  const tableBody = document.querySelector('tbody');
 
   // Initial data
   const initialData = Array.from({ length: 8 }, () => ({
     wins: '',
-    player: '',
+    players: '',
     w: '',
     money: '',
-    r: '',
+    d: '',
   }));
 
   // Generate table rows
-  initialData.forEach((row, rowIndex) => {
+  initialData.forEach((row) => {
     const tr = document.createElement('tr');
 
     Object.keys(row).forEach((column) => {
@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         row[column] = e.target.value;
       });
       td.appendChild(input);
-      td.setAttribute('data-label', column.toUpperCase());
       tr.appendChild(td);
     });
 
