@@ -3,6 +3,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   const tableBody = document.querySelector('tbody');
   const gameValueField = document.getElementById('game-value');
+  const versionNumberElement = document.getElementById('version-number');
+
+  // Read version number from CSS variable
+  const versionNumber = getComputedStyle(document.documentElement).getPropertyValue('--version-number').trim();
+  versionNumberElement.textContent = versionNumber;
 
   // Initial data
   const initialData = Array.from({ length: 8 }, () => ({
