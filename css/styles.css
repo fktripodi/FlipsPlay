@@ -2,6 +2,8 @@
 
 :root {
   --chip-margin: 10px; /* Default margin for chips */
+  --dark-blue: #1E3A8A; /* Dark blue color */
+  --white: #FFFFFF; /* Cold white color */
 }
 
 body {
@@ -24,7 +26,7 @@ body {
 }
 
 .header {
-  background-color: #1E3A8A;
+  background-color: var(--dark-blue);
   display: flex;
   align-items: center;
   padding: 10px;
@@ -106,6 +108,31 @@ body {
   background-color: green;
 }
 
+.dark-blue-row {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 0; /* Add space above and below */
+}
+
+.description {
+  display: flex;
+  align-items: center;
+}
+
+.description span {
+  margin-right: 10px;
+}
+
+.description input {
+  width: 40px; /* Reduced width to half */
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -119,7 +146,7 @@ th, td {
 
 thead th {
   background-color: #FFD700; /* Yellow */
-  color: #1E3A8A; /* Dark blue */
+  color: var(--dark-blue); /* Dark blue */
   font-weight: bold;
 }
 
