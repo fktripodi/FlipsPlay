@@ -39,4 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
       gameValueField.value = value;
     });
   });
+
+  // Highlight all text when clicking on the game-value field
+  gameValueField.addEventListener('click', () => {
+    gameValueField.select();
+  });
+
+  // Add dollar sign automatically in front of new value
+  gameValueField.addEventListener('input', (e) => {
+    if (!gameValueField.value.startsWith('$')) {
+      gameValueField.value = '$' + gameValueField.value.replace('$', '');
+    }
+  });
 });

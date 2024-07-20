@@ -1,13 +1,20 @@
 /* styles.css */
 
+/* Root Variables for Easy Manipulation */
 :root {
-  --chip-margin: 10px; /* Default margin for chips */
-  --dark-blue: #1E3A8A; /* Dark blue color */
-  --white: #FFFFFF; /* Cold white color */
+  --chip-margin: 10px;
+  --dark-blue: #1E3A8A;
+  --white: #FFFFFF;
+  --font-family: Arial, sans-serif;
+  --font-size: 16px;
+  --padding: 10px;
+  --margin: 10px;
 }
 
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,23 +23,26 @@ body {
   margin: 0;
 }
 
+/* Container */
 .container {
   background-color: white;
   width: 96%;
   max-width: 600px;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding-bottom: 10px;
+  padding-bottom: var(--padding);
 }
 
+/* Header */
 .header {
   background-color: var(--dark-blue);
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: var(--padding);
   box-sizing: border-box;
 }
 
+/* Menu Icon */
 .menu-icon {
   display: flex;
   flex-direction: column;
@@ -40,7 +50,7 @@ body {
   height: 24px;
   width: 30px;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: var(--margin);
 }
 
 .menu-icon .line {
@@ -48,6 +58,7 @@ body {
   background-color: yellow;
 }
 
+/* Title Box */
 .title-box {
   flex: 1;
   text-align: center;
@@ -59,6 +70,7 @@ body {
   font-weight: bold;
 }
 
+/* Chips */
 .chips {
   display: flex;
   justify-content: space-between;
@@ -76,45 +88,27 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
-.chip input {
-  width: 100%;
-  text-align: center;
-  border: none;
-  background: transparent;
-  color: white;
-  font-weight: bold;
-  font-size: 1.2em;
+.chip span {
+  pointer-events: none;
 }
 
-.chip.red {
-  background-color: red;
-}
+.chip.red { background-color: red; }
+.chip.blue { background-color: blue; }
+.chip.brown { background-color: brown; }
+.chip.purple { background-color: purple; }
+.chip.green { background-color: green; }
 
-.chip.blue {
-  background-color: blue;
-}
-
-.chip.brown {
-  background-color: brown;
-}
-
-.chip.purple {
-  background-color: purple;
-}
-
-.chip.green {
-  background-color: green;
-}
-
+/* Dark Blue Row */
 .dark-blue-row {
   background-color: var(--dark-blue);
   color: var(--white);
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  margin: 10px 0; /* Add space above and below */
+  padding: var(--padding);
+  margin: var(--margin) 0;
 }
 
 .description {
@@ -123,16 +117,24 @@ body {
 }
 
 .description span {
-  margin-right: 10px;
+  margin-right: var(--margin);
 }
 
 .description input {
-  width: 40px; /* Reduced width to half */
+  width: 40px;
   padding: 5px;
   border: none;
   border-radius: 5px;
 }
 
+#game-value {
+  width: 80px; /* Increase the width as needed */
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center; /* Center align text */
+}
+
+/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
