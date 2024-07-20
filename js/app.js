@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chip.addEventListener('click', () => {
       const value = chip.getAttribute('data-value');
       gameValueField.value = value;
-      chipClickSound.play();
+      chipClickSound.play().catch(error => console.error('Audio playback failed:', error));
     });
   });
 
@@ -56,4 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
       gameValueField.value = '$' + gameValueField.value.replace(/^\$?/, '');
     }
   });
+
+  // Test audio playback with a button
+  const testButton = document.createElement('button');
+  testButton.textContent = 'Test Audio';
+  testButton.addEventListener('click', () => {
+    chipClickSound.play().catch(error => console.error('Audio playback failed:', error));
+  });
+  document.body.appendChild(testButton);
 });
