@@ -53,9 +53,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle version increment
-  let version = localStorage.getItem('version') ? parseInt(localStorage.getItem('version')) : 0;
-  version += 1;
-  localStorage.setItem('version', version);
-  versionNumberElement.textContent = `V${version}`;
+  // Handle version increment only when attributes change
+  const currentVersion = localStorage.getItem('version') ? parseInt(localStorage.getItem('version')) : 1;
+  const lastUpdated = localStorage.getItem('lastUpdated') || '';
+
+  // Function to check for attribute changes
+  const checkForChanges = () => {
+    // Example: Check if the number of chips has changed
+    const chips = document.querySelectorAll('.chip');
+    const chipsData = Array.from(chips).map(chip => chip.getAttribute('data-value')).join(',');
+
+    if (chipsData !== lastUpdated) {
+      localStorage.setItem('lastUpdated', chipsData);
+      localStorage.setItem('version', currentVersion + 1);
+      return true;
+    }
+    return false;
+  };
+
+  if (checkForChanges()) {
+    versionNumberElement.textContent = `V${currentVersion + 1}`;
+  } else {
+    versionNumberElement.textContent = `V${currentVersion}`;
+  }
 });
