@@ -7,14 +7,36 @@
   --white: #FFFFFF;
   --font-family: Arial, sans-serif;
   --font-size: 16px;
+  --font-weight: normal;
   --padding: 10px;
   --margin: 10px;
+  --button-spacing: 20px;
+  --button-bg-color: #FFD700;
+  --button-text-color: #FFFFFF;
 }
+
+/* Utility Classes for Font and Spacing */
+.font-small { font-size: 0.8em; }
+.font-medium { font-size: 1em; }
+.font-large { font-size: 1.2em; }
+
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-bold { font-weight: 700; }
+
+.margin-small { margin: 5px; }
+.margin-medium { margin: 10px; }
+.margin-large { margin: 20px; }
+
+.padding-small { padding: 5px; }
+.padding-medium { padding: 10px; }
+.padding-large { padding: 20px; }
 
 /* Global Styles */
 body {
   font-family: var(--font-family);
   font-size: var(--font-size);
+  font-weight: var(--font-weight);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,4 +184,58 @@ input {
   border: none;
   outline: none;
   padding: 8px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--button-spacing) var(--button-spacing) 0 var(--button-spacing);
+}
+
+.button-players {
+  flex: 1;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 15px;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 var(--button-spacing);
+  font-weight: bold;
+}
+
+.button-history {
+  flex: 1;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 15px;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 var(--button-spacing);
+  font-weight: bold;
+}
+
+.button-other {
+  flex: 1;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 15px;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 var(--button-spacing);
+  font-weight: bold;
+}
+
+.button-players:first-child {
+  margin-left: 0;
+}
+
+.button-other:last-child {
+  margin-right: 0;
 }
