@@ -13,7 +13,7 @@
   --button-spacing: 20px;
   --button-bg-color: #FFD700;
   --button-text-color: #FFFFFF;
-  --chip-size: 75px; /* Set the consistent size for all chips */
+  --chip-size: 70px; /* Set the consistent size for all chips */
 }
 
 /* Utility Classes for Font and Spacing */
