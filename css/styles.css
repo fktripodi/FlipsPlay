@@ -116,18 +116,21 @@ body {
   text-align: center;
   font-size: 1.2em;
   font-weight: bold;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
 
+.chip img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .chip span {
   pointer-events: none;
 }
 
-.chip.red { background-color: red; }
 .chip.blue { background-color: blue; }
 .chip.brown { background-color: brown; }
 .chip.purple { background-color: purple; }
