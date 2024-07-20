@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const tableBody = document.querySelector('tbody');
+  const gameValueField = document.getElementById('game-value');
 
   // Initial data
   const initialData = Array.from({ length: 8 }, () => ({
@@ -29,5 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     tableBody.appendChild(tr);
+  });
+
+  // Add click event to chips
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const value = chip.getAttribute('data-value');
+      gameValueField.value = value;
+    });
   });
 });
