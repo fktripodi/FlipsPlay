@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const tableBody = document.querySelector('tbody');
   const gameValueField = document.getElementById('game-value');
+  const container = document.querySelector('.container');
 
   // Initial data
   const initialData = Array.from({ length: 8 }, () => ({
@@ -48,7 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add dollar sign automatically in front of new value
   gameValueField.addEventListener('input', (e) => {
     if (!gameValueField.value.startsWith('$')) {
-      gameValueField.value = '$' + gameValueField.value.replace('$', '');
+      gameValueField.value = '$' + gameValueField.value.replace(/^\$?/, '');
     }
   });
+
+  // Scroll to top to ensure the top blue rectangle box is visible
+  container.scrollTop = 0;
 });
