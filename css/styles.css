@@ -1,5 +1,9 @@
 /* styles.css */
 
+:root {
+  --chip-margin: 10px; /* Default margin for chips */
+}
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -16,6 +20,7 @@ body {
   max-width: 600px;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
 }
 
 .header {
@@ -43,17 +48,62 @@ body {
 
 .title-box {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
 .title-box span {
   color: yellow;
   font-size: 1.2em;
   font-weight: bold;
+}
+
+.chips {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.chip {
+  flex: 1;
+  margin: var(--chip-margin);
+  position: relative;
   text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chip input {
   width: 100%;
+  text-align: center;
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.chip.red {
+  background-color: red;
+}
+
+.chip.blue {
+  background-color: blue;
+}
+
+.chip.brown {
+  background-color: brown;
+}
+
+.chip.purple {
+  background-color: purple;
+}
+
+.chip.green {
+  background-color: green;
 }
 
 table {
